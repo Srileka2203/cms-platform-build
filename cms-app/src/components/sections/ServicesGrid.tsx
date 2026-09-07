@@ -63,7 +63,7 @@ export default function ServicesGrid() {
 
                   {/* Icon */}
                   <div className="mb-4">
-                    <Icon className="w-8 h-8 text-indigo-600" />
+                    <Icon className="w-8 h-8 text-gray-600" />
                   </div>
 
                   {/* Title */}
@@ -79,7 +79,7 @@ export default function ServicesGrid() {
                   {/* Learn More */}
                   <Link
                     href="/services"
-                    className="text-indigo-600 font-semibold hover:text-indigo-800"
+                    className="text-gray-600 font-semibold hover:text-gray-800"
                   >
                     Learn More →
                   </Link>
