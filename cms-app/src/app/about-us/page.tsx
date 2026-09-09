@@ -1,6 +1,7 @@
 import HeroSection from '@/components/sections/HeroSection';
 import AboutIntro from '@/components/sections/AboutIntro';
 import Mission from '@/components/sections/Mission';
+import OurValues from '@/components/sections/OurValues';
 // import RichText from '@/components/sections/RichText';
 import Timeline from '@/components/sections/Timeline';
 import StatisticsCounters from '@/components/ui/StatisticsCounters';
@@ -15,6 +16,7 @@ export default function aboutusPage() {
       <HeroSection />
       <AboutIntro />
       <Mission />
+      <OurValues />
       {/* <RichText /> */}
       <Timeline />
       <StatisticsCounters />

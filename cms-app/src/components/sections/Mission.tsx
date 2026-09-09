@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, Eye } from 'lucide-react';
+import Card from '../ui/Card';
 
 interface MissionItem {
   title: string;
@@ -45,19 +46,17 @@ export default function Mission() {
 
         {/* Mission & Vision Cards */}
         <div className="grid gap-8 md:grid-cols-2">
-
           {missionItems.map((item) => {
             const Icon = item.icon;
 
             return (
-              <div
+              <Card
                 key={item.title}
                 className="group rounded-3xl border border-gray-200 bg-white p-8
                            shadow-sm transition-all duration-300
                            hover:-translate-y-1 hover:border-gray-400
                            hover:shadow-xl sm:p-10"
               >
-
                 {/* Icon */}
                 <div
                   className="flex h-14 w-14 items-center justify-center
@@ -83,11 +82,9 @@ export default function Mission() {
                              transition-all duration-300
                              group-hover:w-20 group-hover:bg-gray-700"
                 />
-
-              </div>
+              </Card>
             );
           })}
-
         </div>
 
       </div>
