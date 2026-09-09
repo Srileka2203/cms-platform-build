@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import Card from '../ui/Card';
 
 interface Stat {
   label: string;
@@ -36,51 +37,60 @@ const stats: Stat[] = [
   },
 ];
 
+interface CounterProps {
+  value: number;
+  suffix: string;
+  startCounting: boolean;
+}
+
 function Counter({
   value,
   suffix,
   startCounting,
-}: {
-  value: number;
-  suffix: string;
-  startCounting: boolean;
-}) {
+}: CounterProps) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!startCounting) return;
 
     let startTime: number | null = null;
+    let animationFrame: number;
+
     const duration = 1800;
 
     const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
+      if (startTime === null) {
+        startTime = currentTime;
+      }
 
       const progress = Math.min(
         (currentTime - startTime) / duration,
         1
       );
 
-      // Ease-out animation
-      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      // Smooth ease-out animation
+      const easedProgress =
+        1 - Math.pow(1 - progress, 3);
 
       setCount(Math.floor(easedProgress * value));
 
       if (progress < 1) {
-        requestAnimationFrame(animate);
+        animationFrame = requestAnimationFrame(animate);
       } else {
         setCount(value);
       }
     };
 
-    requestAnimationFrame(animate);
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
   }, [startCounting, value]);
 
   return (
-    <span>
+    <>
       {count.toLocaleString()}
       {suffix}
-    </span>
+    </>
   );
 }
 
@@ -117,39 +127,44 @@ export default function StatisticsCounters() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        {/* Heading */}
+        {/* Section Header */}
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">
-            Our Achievements
-          </p>
 
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          <span className="inline-flex rounded-full bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-700">
+            Our Achievements
+          </span>
+
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
             Numbers That Tell Our Story
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg">
+          <p className="mt-5 text-lg leading-8 text-gray-600">
             Our growth is built on the people we work with,
             the solutions we create, and the results we deliver.
           </p>
+
         </div>
 
-        {/* Statistics */}
-        <div className="grid overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, index) => (
-            <div
+        {/* Statistics Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          {stats.map((stat) => (
+            <Card
               key={stat.label}
-              className={`group relative p-8 text-center transition-all duration-300 hover:bg-gray-50 sm:p-10 ${
-                index !== 0
-                  ? 'border-t border-gray-200 sm:border-l sm:border-t-0'
-                  : ''
-              } ${
-                index === 2
-                  ? 'lg:border-l'
-                  : ''
-              }`}
+              className="group rounded-2xl border border-gray-200
+                         bg-white p-7 text-center shadow-sm
+                         transition-all duration-300
+                         hover:-translate-y-1
+                         hover:border-gray-400
+                         hover:shadow-lg
+                         sm:p-8"
             >
+
               {/* Number */}
-              <div className="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+              <div
+                className="text-4xl font-bold tracking-tight
+                           text-gray-900 sm:text-5xl"
+              >
                 <Counter
                   value={stat.value}
                   suffix={stat.suffix}
@@ -158,19 +173,32 @@ export default function StatisticsCounters() {
               </div>
 
               {/* Label */}
-              <h3 className="mt-5 text-sm font-bold uppercase tracking-widest text-gray-700">
+              <h3
+                className="mt-4 text-sm font-bold uppercase
+                           tracking-widest text-gray-700"
+              >
                 {stat.label}
               </h3>
 
               {/* Description */}
-              <p className="mt-3 text-sm leading-6 text-gray-500">
+              <p
+                className="mt-3 text-sm leading-6 text-gray-500"
+              >
                 {stat.description}
               </p>
 
-              {/* Bottom indicator */}
-              <div className="mx-auto mt-6 h-1 w-8 rounded-full bg-gray-300 transition-all duration-300 group-hover:w-16 group-hover:bg-gray-700" />
-            </div>
+              {/* Bottom Indicator */}
+              <div
+                className="mx-auto mt-6 h-1 w-8 rounded-full
+                           bg-gray-300
+                           transition-all duration-300
+                           group-hover:w-16
+                           group-hover:bg-gray-700"
+              />
+
+            </Card>
           ))}
+
         </div>
 
       </div>
