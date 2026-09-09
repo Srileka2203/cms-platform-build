@@ -1,4 +1,5 @@
-import HeroSection from '@/components/sections/HeroSection';
+// import HeroSection from '@/components/sections/HeroSection';
+import AboutHero from '@/components/sections/AboutHero';
 import AboutIntro from '@/components/sections/AboutIntro';
 import Mission from '@/components/sections/Mission';
 import OurValues from '@/components/sections/OurValues';
@@ -13,7 +14,9 @@ import CTABanner from '@/components/sections/CTABanner';
 export default function aboutusPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <HeroSection />
+      {/* <HeroSection /> */}
+      
+      <AboutHero />
       <AboutIntro />
       <Mission />
       <OurValues />
