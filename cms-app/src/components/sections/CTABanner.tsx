@@ -45,7 +45,7 @@ export default function CTABanner() {
               <div className="shrink-0">
                 <Button
                   type="button"
-                  variant="primary"
+                  variant="outline"
                   size="lg"
                   onClick={() => setIsOpen(true)}
                 >
