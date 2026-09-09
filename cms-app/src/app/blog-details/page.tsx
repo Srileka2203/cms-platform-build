@@ -2,6 +2,7 @@ import PageHeader from '@/components/sections/PageHeader';
 import RichText from '@/components/sections/RichText';
 import SocialLinks from '@/components/ui/SocialLinks';
 import RelatedContent from '@/components/sections/RelatedContent';
+import WhyUs from '@/components/sections/WhyUs';
 import CTABanner from '@/components/sections/CTABanner';
 
 export default function blogdetailsPage() {
@@ -11,6 +12,7 @@ export default function blogdetailsPage() {
       <RichText />
       <SocialLinks />
       <RelatedContent />
+      {/* <WhyUs /> */}
       <CTABanner />
     </main>
   );
