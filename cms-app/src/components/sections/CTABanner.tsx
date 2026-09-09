@@ -49,7 +49,7 @@ export default function CTABanner() {
                   size="lg"
                   onClick={() => setIsOpen(true)}
                 >
-                  Get Started
+                  Get Start Now
                   <span className="ml-2" aria-hidden="true">
                     →
                   </span>
