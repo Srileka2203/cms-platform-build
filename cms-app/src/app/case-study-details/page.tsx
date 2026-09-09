@@ -4,6 +4,7 @@ import Process from '@/components/sections/Process';
 import FeaturesGrid from '@/components/sections/FeaturesGrid';
 import Testimonials from '@/components/sections/Testimonials';
 import ImageGallery from '@/components/ui/ImageGallery';
+// import WhyUs from '@/components/sections/WhyUs';
 import CTABanner from '@/components/sections/CTABanner';
 
 export default function casestudydetailsPage() {
@@ -15,6 +16,7 @@ export default function casestudydetailsPage() {
       <FeaturesGrid />
       <Testimonials />
       <ImageGallery />
+      {/* <WhyUs /> */}
       <CTABanner />
     </main>
   );

@@ -5,6 +5,7 @@ import Technologies from '@/components/sections/Technologies';
 import ImageGallery from '@/components/ui/ImageGallery';
 import Testimonials from '@/components/sections/Testimonials';
 import RelatedContent from '@/components/sections/RelatedContent';
+// import WhyUs from '@/components/sections/WhyUs';
 import CTABanner from '@/components/sections/CTABanner';
 
 export default function portfoliodetailsPage() {
@@ -17,6 +18,7 @@ export default function portfoliodetailsPage() {
       <ImageGallery />
       <Testimonials />
       <RelatedContent />
+      {/* <WhyUs /> */}
       <CTABanner />
     </main>
   );

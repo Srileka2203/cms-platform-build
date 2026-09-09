@@ -8,6 +8,7 @@ import PortfolioGrid from '@/components/sections/PortfolioGrid';
 import Testimonials from '@/components/sections/Testimonials';
 import ClientLogos from '@/components/sections/ClientLogos';
 import BlogGrid from '@/components/sections/BlogGrid';
+import WhyUs from '@/components/sections/WhyUs';
 import CTABanner from '@/components/sections/CTABanner';
 import ContactInformation from '@/components/sections/ContactInformation';
 
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Testimonials />
       <ClientLogos />
       <BlogGrid />
+      <WhyUs />
       <CTABanner />
       <ContactInformation />
     </main>

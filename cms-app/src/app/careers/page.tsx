@@ -2,6 +2,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import FeaturesGrid from '@/components/sections/FeaturesGrid';
 import Benefits from '@/components/sections/Benefits';
 import FAQAccordion from '@/components/sections/FAQAccordion';
+// import WhyUs from '@/components/sections/WhyUs';
 import CTABanner from '@/components/sections/CTABanner';
 
 export default function careersPage() {
@@ -11,6 +12,7 @@ export default function careersPage() {
       <FeaturesGrid />
       <Benefits />
       <FAQAccordion />
+      {/* <WhyUs /> */}
       <CTABanner />
     </main>
   );
