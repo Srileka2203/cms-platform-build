@@ -9,7 +9,7 @@ export default function CTABanner() {
   return (
     <>
       {/* CTA Banner */}
-      <section className="bg-gray-900 py-16 sm:py-20">
+      <section className="bg-gray-900 py-16 sm:py-20 mb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl bg-gray-800 px-6 py-12 shadow-xl sm:px-10 sm:py-14 lg:px-16">
 
