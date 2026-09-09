@@ -1,4 +1,4 @@
-import HeroSection from '@/components/sections/HeroSection';
+import ServicesHero from '@/components/sections/ServicesHero';
 import ServicesGrid from '@/components/sections/ServicesGrid';
 import Process from '@/components/sections/Process';
 import Benefits from '@/components/sections/Benefits';
@@ -11,11 +11,11 @@ import CTABanner from '@/components/sections/CTABanner';
 export default function servicesPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <HeroSection />
+      <ServicesHero />
       <ServicesGrid />
       <Process />
       <Benefits />
-      <Industries />
+      <Industries />  
       <Technologies />
       <Testimonials />
       <FAQAccordion />
