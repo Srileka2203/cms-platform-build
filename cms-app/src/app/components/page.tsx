@@ -37,7 +37,6 @@ import RelatedContent from "@/components/sections/RelatedContent";
 import SocialLinks from "@/components/ui/SocialLinks";
 import CustomHTML from "@/components/ui/CustomHTML";
 import FormBuilder from "@/components/ui/FormBuilder";
-import FooterCTA from "@/components/sections/FooterCTA";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import TabsSection from "@/components/sections/TabsSection";
 import ModalPopup from "@/components/ui/ModalPopup";
@@ -110,7 +109,6 @@ export default function ComponentsPage() {
 <div className="mb-12 border-b-4 border-dashed border-gray-300 pb-12"><h2 className="text-center text-gray-400 uppercase tracking-widest mb-4">SocialLinks</h2><SocialLinks /></div>
 <div className="mb-12 border-b-4 border-dashed border-gray-300 pb-12"><h2 className="text-center text-gray-400 uppercase tracking-widest mb-4">CustomHTML</h2><CustomHTML /></div>
 <div className="mb-12 border-b-4 border-dashed border-gray-300 pb-12"><h2 className="text-center text-gray-400 uppercase tracking-widest mb-4">FormBuilder</h2><FormBuilder /></div>
-<div className="mb-12 border-b-4 border-dashed border-gray-300 pb-12"><h2 className="text-center text-gray-400 uppercase tracking-widest mb-4">FooterCTA</h2><FooterCTA /></div>
 <div className="mb-12 border-b-4 border-dashed border-gray-300 pb-12"><h2 className="text-center text-gray-400 uppercase tracking-widest mb-4">Breadcrumbs</h2><Breadcrumbs /></div>
 <div className="mb-12 border-b-4 border-dashed border-gray-300 pb-12"><h2 className="text-center text-gray-400 uppercase tracking-widest mb-4">TabsSection</h2><TabsSection /></div>
 <div className="mb-12 border-b-4 border-dashed border-gray-300 pb-12"><h2 className="text-center text-gray-400 uppercase tracking-widest mb-4">ModalPopup</h2><ModalPopup /></div>
