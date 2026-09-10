@@ -55,23 +55,23 @@ export default function FAQAccordion() {
   };
 
   return (
-    <section className="bg-gray-50 py-20 sm:py-24 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-gray-50 py-12 sm:py-14 lg:py-16">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
 
           {/* Left Heading */}
           <div>
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-gray-400"></span>
+            <div className="mb-3 flex items-center gap-3">
+              <span className="h-px w-8 bg-gray-400"></span>
 
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
                 FAQ
               </span>
             </div>
 
-            <h2 className="text-4xl font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            <h2 className="text-3xl font-bold leading-tight tracking-tight text-gray-900 sm:text-4xl">
               Frequently Asked
               <span className="block text-gray-500">
                 Questions
@@ -79,54 +79,55 @@ export default function FAQAccordion() {
             </h2>
           </div>
 
-          {/* Right Description */}
-          <div className="lg:pb-2">
-            <p className="max-w-2xl text-base leading-7 text-gray-600 sm:text-lg">
-              Find answers to some of the most common questions about our
-              services, project process, development approach, and ongoing
-              support.
+          {/* Description */}
+          <div>
+            <p className="max-w-xl text-sm leading-6 text-gray-600 sm:text-base">
+              Find answers to common questions about our services, project
+              process, development approach, and support.
             </p>
           </div>
+
         </div>
 
         {/* FAQ Accordion */}
-        <div className="mt-16 lg:mt-20">
+        <div className="mt-10">
           <div className="divide-y divide-gray-200 border-y border-gray-200 bg-white">
+
             {faqItems.map((item, index) => {
               const isOpen = openIndex === index;
 
               return (
                 <div key={item.number}>
 
-                  {/* Question Button */}
+                  {/* Question */}
                   <button
                     type="button"
                     onClick={() => handleToggle(index)}
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
-                    className="flex w-full items-center gap-5 px-6 py-6 text-left transition duration-300 hover:bg-gray-50 sm:px-8 sm:py-7 lg:px-10"
+                    className="flex w-full items-center gap-4 px-5 py-4 text-left transition duration-300 hover:bg-gray-50 sm:px-6 sm:py-5"
                   >
 
                     {/* Number */}
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-gray-200 bg-gray-50 text-sm font-bold tracking-widest text-gray-500">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-gray-200 bg-gray-50 text-xs font-bold tracking-widest text-gray-500">
                       {item.number}
                     </span>
 
                     {/* Question */}
-                    <span className="flex-1 text-base font-semibold leading-7 text-gray-900 sm:text-lg">
+                    <span className="flex-1 text-sm font-semibold leading-6 text-gray-900 sm:text-base">
                       {item.question}
                     </span>
 
-                    {/* Dropdown Arrow */}
+                    {/* Arrow */}
                     <span
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center border border-gray-200 text-gray-600 transition duration-300 ${
+                      className={`flex h-7 w-7 shrink-0 items-center justify-center border border-gray-200 text-gray-600 transition duration-300 ${
                         isOpen
                           ? "rotate-180 border-gray-900 bg-gray-900 text-white"
                           : "bg-white"
                       }`}
                     >
                       <svg
-                        className="h-4 w-4"
+                        className="h-3.5 w-3.5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -135,7 +136,7 @@ export default function FAQAccordion() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth="1.8"
+                          strokeWidth="2"
                           d="M6 9l6 6 6-6"
                         />
                       </svg>
@@ -153,8 +154,8 @@ export default function FAQAccordion() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="border-t border-gray-100 px-6 pb-7 pt-5 sm:px-8 lg:px-10 lg:pl-[104px]">
-                        <p className="max-w-4xl text-sm leading-7 text-gray-600 sm:text-base">
+                      <div className="border-t border-gray-100 px-5 pb-5 pt-4 sm:px-6 sm:pl-[73px]">
+                        <p className="max-w-3xl text-sm leading-6 text-gray-600">
                           {item.answer}
                         </p>
                       </div>
@@ -164,36 +165,34 @@ export default function FAQAccordion() {
                 </div>
               );
             })}
+
           </div>
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-14 border-t border-gray-200 pt-10">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-gray-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
 
-            <div>
-              <p className="text-lg font-semibold text-gray-900">
-                Still have questions?
-              </p>
+          <div>
+            <p className="text-sm font-semibold text-gray-900">
+              Still have questions?
+            </p>
 
-              <p className="mt-1 text-sm text-gray-600">
-                Let&apos;s discuss your requirements and find the right
-                solution for your business.
-              </p>
-            </div>
-
-            <a
-              href="/contact"
-              className="inline-flex w-fit items-center rounded-lg bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
-            >
-              Contact Our Team
-
-              <span className="ml-3 text-lg">
-                →
-              </span>
-            </a>
-
+            <p className="mt-1 text-xs text-gray-600 sm:text-sm">
+              Let&apos;s discuss your requirements with our team.
+            </p>
           </div>
+
+          <a
+            href="/contact"
+            className="inline-flex w-fit items-center rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+          >
+            Contact Our Team
+
+            <span className="ml-2">
+              →
+            </span>
+          </a>
+
         </div>
 
       </div>

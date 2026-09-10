@@ -102,6 +102,16 @@ export default function Header() {
               Components
             </Link>
 
+            <Link
+              href="/products"
+              className="rounded-full px-5 py-2.5
+                         text-sm font-medium text-gray-600
+                         transition-all
+                         hover:bg-white hover:text-gray-900"
+            >
+              Products
+            </Link>
+
           </nav>
 
 
