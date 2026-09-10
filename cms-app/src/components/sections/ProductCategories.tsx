@@ -3,8 +3,6 @@ import Link from 'next/link';
 import Card from '../ui/Card';
 import ImageGallery from '../ui/ImageGallery';
 
-
-
 interface Category {
   title: string;
   description: string;
@@ -40,7 +38,7 @@ const categories: Category[] = [
 
 export default function ProductCategories() {
   return (
-    <section className="bg-gray-50 py-16 sm:py-20">
+    <section id='category' className="bg-gray-50 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
