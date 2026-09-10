@@ -154,7 +154,7 @@ export default function FAQAccordion() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="border-t border-gray-100 px-5 pb-5 pt-4 sm:px-6 sm:pl-[73px]">
+                      <div className="border-t border-gray-100 px-5 pb-5 pt-4 sm:px-6 sm:pl-18.25">
                         <p className="max-w-3xl text-sm leading-6 text-gray-600">
                           {item.answer}
                         </p>
