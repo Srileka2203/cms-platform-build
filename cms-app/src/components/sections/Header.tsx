@@ -1,11 +1,25 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button";
 import Logo from "@/components/ui/Logo";
 
 export default function Header() {
+  const pathname = usePathname();
+
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Services", href: "/services" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Blog", href: "/blog" },
+    { name: "Components", href: "/components" },
+    { name: "Products", href: "/products" },
+  ];
+
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-md">
-
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div className="flex h-20 items-center justify-between">
@@ -16,21 +30,13 @@ export default function Header() {
             href="/"
             className="group flex items-center gap-3"
           >
-
-            {/* Logo UI Component */}
             <Logo />
 
-            {/* Logo Text */}
             <div className="leading-tight">
-
               <h1 className="text-lg font-bold tracking-tight text-gray-900">
                 CMS Platform
               </h1>
-
-
-
             </div>
-
           </Link>
 
 
@@ -42,75 +48,25 @@ export default function Header() {
                        lg:flex"
           >
 
-            <Link
-              href="/"
-              className="rounded-full bg-white px-5 py-2.5
-                         text-sm font-semibold text-gray-900
-                         transition-all
-                         hover:bg-gray-100"
-            >
-              Home
-            </Link>
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
 
-            <Link
-              href="/about-us"
-              className="rounded-full px-5 py-2.5
-                         text-sm font-medium text-gray-600
-                         transition-all
-                         hover:bg-white hover:text-gray-900"
-            >
-              About Us
-            </Link>
-
-            <Link
-              href="/services"
-              className="rounded-full px-5 py-2.5
-                         text-sm font-medium text-gray-600
-                         transition-all
-                         hover:bg-white hover:text-gray-900"
-            >
-              Services
-            </Link>
-
-            <Link
-              href="/portfolio"
-              className="rounded-full px-5 py-2.5
-                         text-sm font-medium text-gray-600
-                         transition-all
-                         hover:bg-white hover:text-gray-900"
-            >
-              Portfolio
-            </Link>
-
-            <Link
-              href="/blog"
-              className="rounded-full px-5 py-2.5
-                         text-sm font-medium text-gray-600
-                         transition-all
-                         hover:bg-white hover:text-gray-900"
-            >
-              Blog
-            </Link>
-
-            <Link
-              href="/components"
-              className="rounded-full px-5 py-2.5
-                         text-sm font-medium text-gray-600
-                         transition-all
-                         hover:bg-white hover:text-gray-900"
-            >
-              Components
-            </Link>
-
-            <Link
-              href="/products"
-              className="rounded-full px-5 py-2.5
-                         text-sm font-medium text-gray-600
-                         transition-all
-                         hover:bg-white hover:text-gray-900"
-            >
-              Products
-            </Link>
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`rounded-full px-5 py-2.5
+                    text-sm transition-all
+                    ${
+                      isActive
+                        ? "bg-white font-semibold text-gray-900"
+                        : "font-medium text-gray-600 hover:bg-white hover:text-gray-900"
+                    }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
 
           </nav>
 
@@ -121,23 +77,28 @@ export default function Header() {
 
             <Link
               href="/pricing"
-              className="px-2 py-2 text-sm font-medium
-                         text-gray-600 transition-colors
-                         hover:text-gray-900"
+              className={`px-2 py-2 text-sm transition-colors
+                ${
+                  pathname === "/pricing"
+                    ? "font-semibold text-gray-900"
+                    : "font-medium text-gray-600 hover:text-gray-900"
+                }`}
             >
               Pricing
             </Link>
 
             <Link
               href="/login"
-              className="px-2 py-2 text-sm font-semibold
-                         text-gray-800 transition-colors
-                         hover:text-gray-500"
+              className={`px-2 py-2 text-sm transition-colors
+                ${
+                  pathname === "/login"
+                    ? "font-semibold text-gray-900"
+                    : "font-semibold text-gray-800 hover:text-gray-500"
+                }`}
             >
               Login
             </Link>
 
-            {/* UI Button Component */}
             <Link href="/contact-us">
               <Button
                 variant="primary"
@@ -160,7 +121,6 @@ export default function Header() {
                        lg:hidden"
             aria-label="Open menu"
           >
-
             <svg
               className="h-6 w-6"
               fill="none"
@@ -174,13 +134,11 @@ export default function Header() {
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
-
           </button>
 
         </div>
 
       </div>
-
     </header>
   );
 }
