@@ -61,7 +61,7 @@ export default function ProductsGrid() {
                 </p>
 
                 <Link
-                  href={`/products/${product.id}`}
+                  href={`/product-details`}
                   className="inline-block text-sm font-semibold text-gray-600 hover:text-gray-800 transition"
                 >
                   View Product →

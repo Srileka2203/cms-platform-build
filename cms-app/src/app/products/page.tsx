@@ -1,5 +1,6 @@
 import HeroSection from '@/components/sections/HeroSection';
 import ProductsGrid from '@/components/sections/ProductsGrid';
+import ProductCategories from '@/components/sections/ProductCategories';
 import FeaturesGrid from '@/components/sections/FeaturesGrid';
 import Benefits from '@/components/sections/Benefits';
 import ComparisonTable from '@/components/ui/ComparisonTable';
@@ -11,6 +12,7 @@ export default function productsPage() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       <HeroSection />
       <ProductsGrid />
+      <ProductCategories />
       <FeaturesGrid />
       <Benefits />
       <ComparisonTable />

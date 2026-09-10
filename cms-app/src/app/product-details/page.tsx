@@ -1,4 +1,5 @@
 import HeroSection from '@/components/sections/HeroSection';
+// import ProductOverview from '@/components/sections/ProductOverview';
 import RichText from '@/components/sections/RichText';
 import FeaturesGrid from '@/components/sections/FeaturesGrid';
 import ImageGallery from '@/components/ui/ImageGallery';
@@ -12,6 +13,7 @@ export default function productdetailsPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <HeroSection />
+      {/* <ProductOverview /> */}
       <RichText />
       <FeaturesGrid />
       <ImageGallery />
